@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>naf.cloud</groupId>
-	<artifactId>naf-gateway</artifactId>
+	<artifactId>smart-gateway</artifactId>
 	<version>1.1.0</version>
 	<packaging>jar</packaging>
 
-	<name>naf-gateway</name>
+	<name>smart-gateway</name>
 	<description>Api Gateway for Spring Boot</description>
 
 	<parent>

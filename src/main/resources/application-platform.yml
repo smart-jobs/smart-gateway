@@ -78,6 +78,7 @@ spring:
         - Path=/platform/api/jobs/user/**
         filters:
         - RewritePath=/.*/api/jobs/user/(?<segment>.*), /admin/$\{segment}
+        - JwtParser
       # == 管理接口-企业库服务（platform-corp）==
       - id: admin_api_corp
         uri: http://${api.host}:8102
@@ -86,6 +87,7 @@ spring:
         - Path=/platform/api/jobs/corp/**
         filters:
         - RewritePath=/.*/api/jobs/corp/(?<segment>.*), /admin/$\{segment}
+        - JwtParser
       # == 管理接口-招聘相关接口服务（jobs-service）==
       - id: admin_api_jobs
         uri: http://${api.host}:8201
@@ -94,6 +96,7 @@ spring:
         - Path=/platform/api/jobs/**
         filters:
         - RewritePath=/.*/api/jobs/(?<segment>.*), /admin/$\{segment}
+        - JwtParser
       # == 管理接口-CMS系统相关接口服务（cms-service）==
       - id: admin_api_cms
         uri: http://${api.host}:8202
