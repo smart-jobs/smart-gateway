@@ -148,14 +148,14 @@ spring:
         uri: http://${api.host}:8002
         order: 9000
         predicates:
-        - Path=/www/api/naf/code/**
+        - Path=/platform/api/naf/code/**
         filters:
-        - RewritePath=/www/api/naf/code/(?<segment>.*), /api/$\{segment}
+        - RewritePath=/platform/api/naf/code/(?<segment>.*), /api/$\{segment}
       # == 框架接口-NAF分站接口服务 ==
       - id: naf_unit
         uri: http://${api.host}:8001
         order: 9000
         predicates:
-        - Path=/www/api/naf/unit/**
+        - Path=/platform/api/naf/unit/**
         filters:
-        - RewritePath=/www/api/naf/unit/(?<segment>.*), /api/unit/$\{segment}
+        - RewritePath=/platform/api/naf/unit/(?<segment>.*), /api/unit/$\{segment}
