@@ -51,12 +51,22 @@ spring:
         filters:
         - RewritePath=/weixin/api/corp/(?<segment>.*), /api/$\{segment}
         - JwtParser
+      # == 业务接口-招聘系统查询服务 ==
+      - id: platform_jobs_api_get
+        uri: http://${api.host}:8201
+        order: 9000
+        predicates:
+        - Path=/weixin/api/jobs/**
+        - Method=GET
+        filters:
+        - RewritePath=/weixin/api/jobs/(?<segment>.*), /api/$\{segment}
       # == 业务接口-招聘系统接口服务 ==
       - id: platform_jobs_api
         uri: http://${api.host}:8201
         order: 9000
         predicates:
         - Path=/weixin/api/jobs/**
+        - Method=POST
         filters:
         - RewritePath=/weixin/api/jobs/(?<segment>.*), /api/$\{segment}
         - JwtParser=.*(ticket/verify|jobfair/today|ticket/login|corp/checkin)
