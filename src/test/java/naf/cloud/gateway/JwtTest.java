@@ -18,7 +18,7 @@ public class JwtTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String secret = "Ziyouyanfa!@#";
+		String secret = "1234";
 		byte[] key = Arrays.copyOf(secret.getBytes(), 32);
 		new MacSigner(SignatureAlgorithm.HS256, key); // 这个操作比较耗时
 
